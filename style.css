@@ -1,3 +1,21 @@
+#loading {
+  position: fixed;
+  background: #000b33 url("img/accion-fondo.jpg") no-repeat center top;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+  transition: opacity 2s ease;
+}
+#loading img {
+  width: 50px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
 .contenedor {
   margin: 0;
   padding: 0;
@@ -7,6 +25,8 @@
   background-size: cover;
   position: relative;
   font-family: Arial;
+  opacity: 0;
+  transition: opacity 2s ease;
 }
 .contenedor#login {
   background: #000b33 url("img/login-fondo.jpg") no-repeat center bottom;
@@ -29,7 +49,7 @@ img {
   transform: translateX(-50%);
   border-radius: 100%;
   box-shadow: 0 0 100px #00fff6;
-  animation: glow 2s linear infinite alternate
+  animation: glow 2s linear infinite alternate;
 }
 @keyframes glow {
   from {
@@ -57,7 +77,7 @@ img {
 }
 .cont-form {
   width: 100%;
-  
+
   background: rgb(87, 252, 249);
   background: linear-gradient(180deg, rgb(4 184 180) 0%, rgb(2 36 131 / 36%) 100%);
   margin-top: 145px;
@@ -105,7 +125,7 @@ img {
 /*ACCION*/
 #contador {
   display: flex;
-  color: #4df7ff
+  color: #4df7ff;
 }
 #contador span {
   display: block;
@@ -117,21 +137,20 @@ img {
 }
 #accion .contenedor-info {
   margin-top: 25vh;
-
 }
 #contador .tag {
   font-size: 12px;
   letter-spacing: 0.25em;
 }
-#accion  .cont-form {
+#accion .cont-form {
   margin-top: 2vh;
   margin-bottom: 2vh;
 }
 #accion .contenedor-info .fila:first-child .col:first-child img {
-  transform: translateX(-140%)
+  transform: translateX(-140%);
 }
 #accion .contenedor-info .fila:first-child .col:last-child img {
-  transform: translateX(80%)
+  transform: translateX(80%);
 }
 #accion .fila-mensaje {
   position: fixed;
@@ -144,5 +163,53 @@ img {
   max-width: 600px;
   text-align: center;
   left: 50%;
-  transform: translateX(-50%)
+  transform: translateX(-50%);
+}
+/*Canvas*/
+#canvas_mobile, #canvas_escritorio {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+#canvas_mobile {
+  right: 0;
+  left:initial;
+}
+.canvas-base {
+  display: none;
+}
+#caja-descarga {
+  max-width: 500px;
+  margin: 20px auto;
+  COLOR: WHITE;
+  text-align: center;
+  background: rgb(0 11 51 / 80%);
+  padding: 20px;
+  border-radius: 16px;
+  letter-spacing: 0.05em;
+  box-sizing:border-box;
+  opacity: 0;
+  transition: 2s ease;
+  pointer-events: none;
+  position: relative;
+  z-index: 99;
+}
+#caja-descarga.mostrar {
+  opacity: 1;
+  pointer-events: initial
+}
+#caja-descarga span {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+#caja-descarga a {
+  color: #4df7ff;
+  text-transform: uppercase;
+  font-size: 13px;
+  display: inline-block;
+  cursor: pointer;
+  margin: 12px;
+  text-decoration: underline;
 }

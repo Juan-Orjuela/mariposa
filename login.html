@@ -15,6 +15,7 @@
   </head>
 
   <body>
+    <div id="loading"><img src="img/loader.gif" alt="CARGANDO..." /></div>
     <div class="contenedor" id="login">
       <div id="particles-js"></div>
       <div class="contenedor-info">
@@ -30,9 +31,19 @@
           </div>
         </div>
       </div>
-      <div id="glow-planeta"></div>
     </div>
     <!--FOOTER WORDPRESS-->
+    <script>
+      var cargando = document.getElementById("loading");
+      var contenido = document.querySelector(".contenedor");
+      setTimeout(function () {
+        contenido.style.opacity = 1;
+        cargando.style.opacity = 0;
+        setTimeout(function () {
+          cargando.style.display = "none";
+        }, 2000);
+      }, 5000);
+    </script>
     <script src="particles.min.js"></script>
     <script src="particulas.js"></script>
   </body>

@@ -15,6 +15,7 @@
   </head>
 
   <body>
+    <div id="loading"><img src="img/loader.gif" alt="CARGANDO..." /></div>
     <div class="contenedor" id="accion">
       <div id="particles-js"></div>
       <div class="contenedor-info">
@@ -24,7 +25,7 @@
         </div>
         <div class="fila fila-form">
           <div class="cont-form">
-            <form action=""><input placeholder="ACCION EFECTO MARIPOSA" type="text" name="" id="" /><input type="submit" value="ENVIAR" /></form>
+            <form action=""><input placeholder="ACCION EFECTO MARIPOSA" type="text" name="" id="accionmariposa" maxlength="40" /><input type="submit" value="ENVIAR" /></form>
           </div>
         </div>
         <div class="fila-contador">
@@ -40,9 +41,31 @@
         </div>
       </div>
       <div id="glow-planeta"></div>
+      <!--Canvas-->
+      <img src="img/accion-desktop.jpg" alt="" id="canvas_img_escritorio" class="canvas-base" />
+      <canvas id="canvas_escritorio" width="1440px" height="900px"></canvas>
+
+      <img src="img/accion-mobile.jpg" alt="" id="canvas_img_mobile" class="canvas-base" />
+      <canvas id="canvas_mobile" width="640px" height="1136px"></canvas>
+      <div id="caja-descarga">
+        <span>DESCARGA TU ACCIÓN:</span>
+        <a id="descarga_escritorio" download="mi_proposito_computador.jpg">Formato computador</a>
+        <a id="descarga_mobile" download="mi_proposito_celular.jpg">Formato celular</a>
+      </div>
     </div>
     <script src="contador.js"></script>
     <!--FOOTER WORDPRESS-->
+    <script>
+      var cargando = document.getElementById("loading");
+      var contenido = document.querySelector(".contenedor");
+      setTimeout(function () {
+        contenido.style.opacity = 1;
+        cargando.style.opacity = 0;
+        setTimeout(function () {
+          cargando.style.display = "none";
+        }, 2000);
+      }, 5000);
+    </script>
     <script src="particles.min.js"></script>
     <script src="particulas.js"></script>
   </body>
