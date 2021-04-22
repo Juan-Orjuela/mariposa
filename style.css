@@ -470,25 +470,46 @@ html .wpcf7-not-valid-tip {
   }
 }
 /*MARIPOSA FINAL*/
+.contenedor-info-mariposa {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.fila-logos {
+justify-content: center;
+margin-bottom: -120px;
+}
+.fila-logos .col{
+  width: 300px;
+}
+.fila-logos .col img {
+  opacity: 0;
+  animation: mariposaimg 2s linear 10s forwards;
+}
+.fila-logos .col:last-child {
+  position: relative;
+  left: 60px;
+}
 .contenedor#mariposa {
   background: #000b33 url("img/fondo-mariposa-final.jpg") no-repeat center bottom;
   background-size: cover;
 }
 #mariposa-svg {
   position: absolute;
-  bottom: 19px;
+  bottom: 18px;
   left: 13px;
 }
 #mariposa-svg polygon {
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
-  animation: mariposa 12s linear 3s forwards;
+  animation: mariposa 12s linear 5s forwards;
 }
 #mariposa-svg polyline,
 #mariposa-svg path{
   stroke-dasharray: 2000;
   stroke-dashoffset: 2000;
-  animation: mariposa 12s linear 4s forwards;
+  animation: mariposa 12s linear 7s forwards;
   
 }
 #mariposa-puntos-svg {
@@ -512,9 +533,10 @@ html .wpcf7-not-valid-tip {
 #mariposa-img img,
 #cont-mariposa {
   width: 1127px;
+
 }
 #cont-mariposa {
-  margin: 5vh auto 0;
+  margin: 0 auto;
   position: relative;
 }
 @keyframes mariposa {
@@ -524,11 +546,109 @@ html .wpcf7-not-valid-tip {
 }
 #mariposa-img img {
   opacity: 0;
-  animation: mariposaimg 4s linear 4s forwards;
+  animation: mariposaimg 6s linear 8s forwards;
 
 }
 @keyframes mariposaimg {
   to {
     opacity: 1;
+  }
+}
+/*Tooltip Muestra*/
+.tooltip {
+  position: absolute;
+  display: inline-block;
+  left: 405px;
+  top: 250px;
+  z-index: 3;
+}
+.tooltip.tool-2 {
+  left: 831px;
+  top: 190px;
+}
+.tooltip.tool-3 {
+  left: 418px;
+  top: 541px;
+}
+.tooltip .punto {
+  width: 8px;
+  height: 8px;
+  background: #00d9ff;
+  border-radius: 100%;
+  border: 4px white solid;
+  cursor: pointer;
+
+}
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 180px;
+  background-color: #000223;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 12px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #000223 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+.tooltip {
+  font-size: 14px;
+  line-height: 1.2;
+  opacity: 0;
+}
+.tooltip .nombre {
+  display: block;
+  font-weight: bold;
+  color: #0edbff;
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgb(14 219 255 / 29%);
+}
+@media screen and (max-height: 800px) {
+  .contenedor-info-mariposa {
+    transform: scale(.85)
+  }
+}
+@media screen and (max-width: 1150px) {
+  .contenedor-info-mariposa {
+    transform: scale(.85)
+  }
+  #cont-mariposa {
+    width: 960px;
+}
+#mariposa-svg, #mariposa-puntos-svg {
+    width: 939px;
+}
+ #mariposa-svg {
+   bottom: -34px;
+   left: 11px;
+ }
+ #mariposa-puntos-svg {
+   bottom: -37px;
+ }
+}
+@media screen and (max-height: 800px) {
+  .contenedor-info-mariposa {
+    transform: scale(.85)
   }
 }

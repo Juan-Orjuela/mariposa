@@ -19,10 +19,35 @@
     <div class="contenedor" id="mariposa">
       <div id="particles-js"></div>
       <div class="contenedor-info-mariposa">
+        <div class="fila fila-logos">
+          <div class="col"><img src="img/logo-efecto-mariposa.png" alt="EL EFECTO MARIPOSA" /></div>
+          <div class="col"><img src="img/logo-ach.png" alt="ACH" /></div>
+        </div>
         <div class="fila-mariposa">
           <div id="cont-mariposa">
             <div id="cont-puntos">
-              <!-- Generator: Adobe Illustrator 25.2.1, SVG Export Plug-In  -->
+              <!-- Puntos  -->
+              <div class="tooltip">
+                <div class="punto"></div>
+                <div class="tooltiptext">
+                  <span class="nombre">Rocío del Pilar Rodríguez</span>
+                  <span class="accion">Evaluar los procesos a profundidad para asegurar el cumplimiento y efectividad.</span>
+                </div>
+              </div>
+              <div class="tooltip tool-2">
+                <div class="punto"></div>
+                <div class="tooltiptext">
+                  <span class="nombre">Giovanni Arturo Mendoza</span>
+                  <span class="accion">Ser multiplicador y ejemplo para la implementación de una cultura ágil en ACH.</span>
+                </div>
+              </div>
+              <div class="tooltip tool-3">
+                <div class="punto"></div>
+                <div class="tooltiptext">
+                  <span class="nombre">Nubia Marcela Niño Egas</span>
+                  <span class="accion">Satisfacer las necesidades de mi cliente interno con oportunidad y calidad.</span>
+                </div>
+              </div>
               <svg
                 version="1.1"
                 xmlns="http://www.w3.org/2000/svg"
@@ -1017,8 +1042,7 @@
                 </g>
               </svg>
             </div>
-            <!-- Generator: Adobe Illustrator 25.2.1, SVG Export Plug-In  -->
-            <!-- Generator: Adobe Illustrator 25.2.1, SVG Export Plug-In  -->
+            <!-- Lineas  -->
             <svg
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"
@@ -1363,9 +1387,8 @@
               </g>
             </svg>
 
-            <!--Fin-->
             <div id="mariposa-img">
-              <img src="img/mariposa-base-2.png" alt="Mariposa" />
+              <img src="img/mariposa-base-3.png" alt="Mariposa" />
             </div>
           </div>
         </div>
@@ -1374,9 +1397,10 @@
     <script src="anime.min.js"></script>
     <script>
       anime({
-        targets: "#mariposa-puntos-svg path",
+        targets: "#mariposa-puntos-svg path, .tooltip",
         opacity: [0, 1],
-        delay: anime.stagger(60),
+        duration: 2000,
+        delay: anime.stagger(60, { start: 1000, easing: "linear" }),
       });
     </script>
     <!--FOOTER WORDPRESS-->
