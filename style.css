@@ -558,18 +558,9 @@ margin-bottom: -120px;
 .tooltip {
   position: absolute;
   display: inline-block;
-  left: 405px;
-  top: 250px;
   z-index: 3;
 }
-.tooltip.tool-2 {
-  left: 831px;
-  top: 190px;
-}
-.tooltip.tool-3 {
-  left: 418px;
-  top: 541px;
-}
+
 .tooltip .punto {
   width: 8px;
   height: 8px;
@@ -581,7 +572,7 @@ margin-bottom: -120px;
 }
 .tooltip .tooltiptext {
   visibility: hidden;
-  width: 180px;
+  
   background-color: #000223;
   color: #fff;
   text-align: left;
@@ -595,7 +586,16 @@ margin-bottom: -120px;
   opacity: 0;
   transition: opacity 0.3s;
 }
-
+.tooltip .tooltiptext.caja-corta {
+  width: 180px;
+}
+.tooltip .tooltiptext.caja-larga {
+  width: 360px;
+}
+.tooltip .tooltiptext.caja-larga .accion {
+  font-size: 12px;
+  line-height: 1;
+}
 .tooltip .tooltiptext::after {
   content: "";
   position: absolute;
@@ -651,4 +651,17 @@ margin-bottom: -120px;
   .contenedor-info-mariposa {
     transform: scale(.85)
   }
+}
+/*Posicion Tooltips*/
+.tooltip.tool-1 {
+  left: 7px;
+  top: 204px;
+}
+.tooltip.tool-2 {
+  left: 831px;
+  top: 190px;
+}
+.tooltip.tool-3 {
+  left: 418px;
+  top: 541px;
 }

@@ -1,27 +1,13 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>Efecto Mariposa ACH</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <!--HEADER WORDPRESS-->
-  </head>
-
-  <body>
-    <div id="loading"><img src="img/loader.gif" alt="CARGANDO..." /></div>
+<?php /* Template Name: Mariposa Completa */ ?>
+<?php get_header(); ?>
+<!--INICIA HTML-->
+<div id="loading"><img src="<?php echo get_template_directory_uri(); ?>/img/loader.gif" alt="CARGANDO..." /></div>
     <div class="contenedor" id="mariposa">
       <div id="particles-js"></div>
       <div class="contenedor-info-mariposa">
         <div class="fila fila-logos">
-          <div class="col"><img src="img/logo-efecto-mariposa.png" alt="EL EFECTO MARIPOSA" /></div>
-          <div class="col"><img src="img/logo-ach.png" alt="ACH" /></div>
+          <div class="col"><img src="<?php echo get_template_directory_uri(); ?>/img/logo-efecto-mariposa.png" alt="EL EFECTO MARIPOSA" /></div>
+          <div class="col"><img src="<?php echo get_template_directory_uri(); ?>/img/logo-ach.png" alt="ACH" /></div>
         </div>
         <div class="fila-mariposa">
           <div id="cont-mariposa">
@@ -1368,14 +1354,14 @@
             </svg>
 
             <div id="mariposa-img">
-              <img src="img/mariposa-base-3.png" alt="Mariposa" />
+              <img src="<?php echo get_template_directory_uri(); ?>/img/mariposa-base-3.png" alt="Mariposa" />
             </div>
           </div>
         </div>
       </div>
     </div>
     <!--CARGA DE DATOS-->
-    <script src="acciones.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/acciones.js"></script>
     <script>
       const puntos = document.getElementById("cont-puntos");
       for (let i = 0; i < acciones.length; i++) {
@@ -1390,7 +1376,7 @@
       }
     </script>
     <!--FIN CARGA DE DATOS-->
-    <script src="anime.min.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/anime.min.js"></script>
     <script>
       anime({
         targets: "#mariposa-puntos-svg path, .tooltip",
@@ -1399,19 +1385,6 @@
         delay: anime.stagger(60, { start: 1000, easing: "linear" }),
       });
     </script>
-    <!--FOOTER WORDPRESS-->
-    <script>
-      var cargando = document.getElementById("loading");
-      var contenido = document.querySelector(".contenedor");
-      setTimeout(function () {
-        contenido.style.opacity = 1;
-        cargando.style.opacity = 0;
-        setTimeout(function () {
-          cargando.style.display = "none";
-        }, 1000); //2000
-      }, 2000); //5000
-    </script>
-    <script src="particles.min.js"></script>
-    <script src="particulas.js"></script>
-  </body>
-</html>
+<!--FINALIZA HTML-->
+<?php get_sidebar(); ?>
+<?php get_footer(); ?>

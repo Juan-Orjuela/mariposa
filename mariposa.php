@@ -1,32 +1,39 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>Efecto Mariposa ACH</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <!--HEADER WORDPRESS-->
-  </head>
-
-  <body>
-    <div id="loading"><img src="img/loader.gif" alt="CARGANDO..." /></div>
+<?php /* Template Name: Mariposa */ ?>
+<?php get_header(); ?>
+<!--INICIA HTML-->
+<div id="loading"><img src="<?php echo get_template_directory_uri(); ?>/img/loader.gif" alt="CARGANDO..." /></div>
     <div class="contenedor" id="mariposa">
       <div id="particles-js"></div>
       <div class="contenedor-info-mariposa">
         <div class="fila fila-logos">
-          <div class="col"><img src="img/logo-efecto-mariposa.png" alt="EL EFECTO MARIPOSA" /></div>
-          <div class="col"><img src="img/logo-ach.png" alt="ACH" /></div>
+          <div class="col"><img src="<?php echo get_template_directory_uri(); ?>/img/logo-efecto-mariposa.png" alt="EL EFECTO MARIPOSA" /></div>
+          <div class="col"><img src="<?php echo get_template_directory_uri(); ?>/img/logo-ach.png" alt="ACH" /></div>
         </div>
         <div class="fila-mariposa">
           <div id="cont-mariposa">
             <div id="cont-puntos">
               <!-- Puntos  -->
+              <div class="tooltip">
+                <div class="punto"></div>
+                <div class="tooltiptext">
+                  <span class="nombre">Rocío del Pilar Rodríguez</span>
+                  <span class="accion">Evaluar los procesos a profundidad para asegurar el cumplimiento y efectividad.</span>
+                </div>
+              </div>
+              <div class="tooltip tool-2">
+                <div class="punto"></div>
+                <div class="tooltiptext">
+                  <span class="nombre">Giovanni Arturo Mendoza</span>
+                  <span class="accion">Ser multiplicador y ejemplo para la implementación de una cultura ágil en ACH.</span>
+                </div>
+              </div>
+              <div class="tooltip tool-3">
+                <div class="punto"></div>
+                <div class="tooltiptext">
+                  <span class="nombre">Nubia Marcela Niño Egas</span>
+                  <span class="accion">Satisfacer las necesidades de mi cliente interno con oportunidad y calidad.</span>
+                </div>
+              </div>
               <svg
                 version="1.1"
                 xmlns="http://www.w3.org/2000/svg"
@@ -49,7 +56,6 @@
                 <g>
                   <path
                     class="st0"
-                    id="punto-prueba"
                     d="M507.26,224.37c0,2.08,1.69,3.77,3.77,3.77c2.08,0,3.77-1.69,3.77-3.77c0-2.08-1.69-3.77-3.77-3.77
  C508.95,220.6,507.26,222.29,507.26,224.37z"
                   />
@@ -1368,29 +1374,13 @@
             </svg>
 
             <div id="mariposa-img">
-              <img src="img/mariposa-base-3.png" alt="Mariposa" />
+              <img src="<?php echo get_template_directory_uri(); ?>/img/mariposa-base-3.png" alt="Mariposa" />
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!--CARGA DE DATOS-->
-    <script src="acciones.js"></script>
-    <script>
-      const puntos = document.getElementById("cont-puntos");
-      for (let i = 0; i < acciones.length; i++) {
-        const caja = acciones[i].accion.length > 140 ? "larga" : "corta";
-        puntos.innerHTML += `<div class="tooltip tool-${i + 1}">
-                <div class="punto"></div>
-                <div class="tooltiptext caja-${caja}">
-                  <span class="nombre">${acciones[i].nombre} ${acciones[i].apellido}</span>
-                  <span class="accion">${acciones[i].accion}</span>
-                </div>
-              </div>`;
-      }
-    </script>
-    <!--FIN CARGA DE DATOS-->
-    <script src="anime.min.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/anime.min.js"></script>
     <script>
       anime({
         targets: "#mariposa-puntos-svg path, .tooltip",
@@ -1399,19 +1389,6 @@
         delay: anime.stagger(60, { start: 1000, easing: "linear" }),
       });
     </script>
-    <!--FOOTER WORDPRESS-->
-    <script>
-      var cargando = document.getElementById("loading");
-      var contenido = document.querySelector(".contenedor");
-      setTimeout(function () {
-        contenido.style.opacity = 1;
-        cargando.style.opacity = 0;
-        setTimeout(function () {
-          cargando.style.display = "none";
-        }, 1000); //2000
-      }, 2000); //5000
-    </script>
-    <script src="particles.min.js"></script>
-    <script src="particulas.js"></script>
-  </body>
-</html>
+<!--FINALIZA HTML-->
+<?php get_sidebar(); ?>
+<?php get_footer(); ?>

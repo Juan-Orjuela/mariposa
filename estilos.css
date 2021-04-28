@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "Akzidenz-Grotesk BQ";
+  src: url("../../../fuentes/AkzidenzGroteskBQ-Medium.woff") format("woff"), url("../../../fuentes/AkzidenzGroteskBQ-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Akzidenz-Grotesk BQ";
+  src: url("../../../fuentes/AkzidenzGroteskBQ-Bold.woff") format("woff"), url("../../../fuentes/AkzidenzGroteskBQ-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Akzidenz-Grotesk BQ";
+  src: url("../../../fuentes/AkzidenzGroteskBQ-Reg.woff") format("woff"), url("../../../fuentes/AkzidenzGroteskBQ-Reg.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
